@@ -5,6 +5,7 @@ import az.telegrambot.app.telegrambot.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +19,8 @@ public class BotResource {
     private final MessageService messageService;
 
     @PostMapping("/send")
-    public String sendText(@RequestBody MessageSendRequestDto messageSendRequestDto) {
+    public ResponseEntity<String> sendText(@RequestBody MessageSendRequestDto messageSendRequestDto) {
         messageService.send(messageSendRequestDto);
-        return "Sent";
+        return ResponseEntity.ok("Sent");
     }
 }
