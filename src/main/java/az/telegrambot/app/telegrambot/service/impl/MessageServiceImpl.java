@@ -21,10 +21,7 @@ public class MessageServiceImpl implements MessageService {
 
         Chat chat = new Chat();
         chat.setTitle("This is title");
-//        chat.setId(314828387L);
-        chat.setId(-1001790729269L);
-       /* chat.setFirstName("Ulvi");
-        chat.setLastName("Mardaliyev");*/
+        chat.setId(-1111111111L);
         message.setChat(chat);
         update.setMessage(message);
         myBot.onUpdateReceived(update);
